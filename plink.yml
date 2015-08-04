@@ -26,6 +26,8 @@
 # https://github.com/google/gdata-python-client/blob/master/samples/spreadsheets/spreadsheetExample.py
 # http://stackoverflow.com/questions/9690138/reading-writing-to-google-docs-spreadsheets-with-python
 # https://github.com/burnash/gspread
+# can also grab them as json:
+# http://www.reddit.com/r/golang/comments/38lo4y/is_there_a_google_sheets_library_so_i_can_read_a/
 
 
 docs:
