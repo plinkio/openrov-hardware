@@ -1,36 +1,34 @@
-# part:
-#   name: OpenROV v2_7
-#   doc:
-#     file: "CAD_Files_OpenROV_v2_7/STEP/v2.7 ROV Assembly.stp"
-
-#Ok, maybe this is simpler. How about, just a list of files to parse?
-# will someday probably want options under some of these files... 
-
-# hmmm here is a problem. OpenROV uses multiple git
-# repos. e.g. hardware and electronics. This is going to be a very
-# common use case. soo..... need to unify this somehow. only way I can
-# see is w/ plink level DB action.  so this whole plan isn't really
-# going to work.  need to create a project and then add repos and the
-# files and stuff.  a way around this is you have to make a "master"
-# repo where you link docs to all of the other repos.
-
-# ah, finally found the BOM I thought they had. It's link to a google doc from README.md
-# https://docs.google.com/spreadsheets/d/1DdteDlJqQQ5VRS-0wDRqXkb3rrWe9QZ-iHLwQIVYGBA/edit#gid=5
-# :facepalm:
-# bleh. anyway to read in a google doc?
-# yes? https://developers.google.com/google-apps/spreadsheets/?hl=en
-# sounds like it is part of gdata client lib?
-# https://developers.google.com/gdata/docs/client-libraries?hl=en
-# oh man, f this: just export it as a .csv. bleh.
-# here is some python that works w/ sheets:
-# https://github.com/google/gdata-python-client/blob/master/samples/spreadsheets/spreadsheetExample.py
-# http://stackoverflow.com/questions/9690138/reading-writing-to-google-docs-spreadsheets-with-python
-# https://github.com/burnash/gspread
-# can also grab them as json:
-# http://www.reddit.com/r/golang/comments/38lo4y/is_there_a_google_sheets_library_so_i_can_read_a/
-
-
 docs:
   - name: "CAD_Files_OpenROV_v2_7/STEP/v2.7 ROV Assembly.stp"
     handler: "STEP" # could try to detect this
-    
+
+docs:
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
+    handler: "STEP" # the step handler creates a single component based on the filename
+       
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Fin.stp"
+    handler: "STEP"    
+
+assemblies:
+  - name: "Mechanical Assembly"
+    subassemblies:
+      - "Shell"
+      - "Main Structure"
+      
+
+  - name: "Shell"
+    parts:
+      # these are referencing components
+      # (but what if the component and the parts have different names?
+      # then you would do
+      # - component: "Shell"
+      #   name: "S1"
+      # if you wanted to make a Shell part named S1.
+      # otherwise the name is the same as the component name
+      - component: "Shell"
+      - component: "Fin"
+
+  - name: "Main Structure"
+    parts:
+      - component: "Top Plate"
+      - component: "Bulkhead"
