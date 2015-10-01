@@ -13,8 +13,8 @@ assemblies:
   - name: "Mechanical Assembly"
     subassemblies:
       # same naming rules in parts -- you could instatiate two "Shell" subassemblies and give them names.
-      - subassembly: "Shell"
-      - subassembly: "Main Structure"
+      - assembly: "Shell"
+      - assembly: "Main Structure"
       
 
   - name: "Shell"
