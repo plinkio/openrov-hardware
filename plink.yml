@@ -1,9 +1,15 @@
 docs:
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
-    handler: "STEP" # the step handler creates a single component based on the filename
+    handler: "STEP" # the step handler creates a "solid" class of the same name. 
        
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Fin.stp"
     handler: "STEP"    
+
+  - filename: "CAD_Files_OpenROV_v2_8/DXF/Shell/Fin_3 millimeter_Polypro.dxf"
+    handler: "DXF" # dxf handler creates vectors
+
+  - filename: "CAD_Files_OpenROV_v2_8/DXF/Shell/Shell_3%20millimeter_Polypro.dxf"
+    handler: "DXF"
 
 assemblies:
   - name: "Mechanical Assembly" # if only name is provided, then a class of "name" will be created as name
@@ -24,10 +30,35 @@ assemblies:
       # if you wanted to make a Shell part named S1.
       # otherwise the name is the same as the component name
       - name: "Shell"
-        component: "Shell" # also redundant
-      - name: "Fin" # the component implied here is "Fin"
+        solid: "Shell" # also redundant
+      - name: "Fin" # the solid implied here is "Fin"
 
   - assembly: "Main Structure"
     parts:
       - component: "Top Plate"
       - component: "Bulkhead"
+
+# this is where object can be purchased from these could be loaded in
+# from the system bom as well... but that file is a mess and in
+# another repo so going to figure that out later.
+sourced:
+  # if no name is provided, then the canonical name for the source will be used. for "raw material" it is:
+  # "type, material, thickness"
+  - class: "raw material"
+    type: "sheet"
+    material: "acrylic"
+    thickness: "3mm"
+    vendors:
+      - "http://www.mcmaster.com/#8560K259"
+  
+# this is a list of fabrications. a fabrication take a part(s) or assembl(ies) (any thing that implments "cad.Thing") as an input and produces a Thing as an output.
+# examples would a piece of raw sheet plastic (from a source) and laser cut using a DXF file to produce a solid. (e.g. most of the pieces in the OpenROV cad)
+fabrications:
+  - inputs:
+      - type: "raw material"
+        name: "sheet, acrylic, 3mm" # canonical name
+      - type: "vectors"
+        name: "Shell" # this will come from the Shell.dxf in this example
+  - outputs:
+      - type: "solid"
+        name: "Shell" # this output solid that gets made. 
