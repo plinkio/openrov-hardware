@@ -1,8 +1,4 @@
 docs:
-  - name: "CAD_Files_OpenROV_v2_7/STEP/v2.7 ROV Assembly.stp"
-    handler: "STEP" # could try to detect this
-
-docs:
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
     handler: "STEP" # the step handler creates a single component based on the filename
        
