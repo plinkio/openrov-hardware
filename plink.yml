@@ -10,14 +10,15 @@ docs:
     handler: "STEP"    
 
 assemblies:
-  - name: "Mechanical Assembly"
+  - name: "Mechanical Assembly" # if only name is provided, then a class of "name" will be created as name
     subassemblies:
       # same naming rules in parts -- you could instatiate two "Shell" subassemblies and give them names.
-      - assembly: "Shell"
-      - assembly: "Main Structure"
+      - name: "Shell"
+        assembly: "Shell" # this is redundant when name == assembly
+      - name: "Main Structure"
       
 
-  - name: "Shell"
+  - assembly: "Shell" # if only assembly is provided, then this is a "class"
     parts:
       # these are referencing components
       # (but what if the component and the parts have different names?
@@ -26,10 +27,11 @@ assemblies:
       #   name: "S1"
       # if you wanted to make a Shell part named S1.
       # otherwise the name is the same as the component name
-      - component: "Shell"
-      - component: "Fin"
+      - name: "Shell"
+        component: "Shell" # also redundant
+      - name: "Fin" # the component implied here is "Fin"
 
-  - name: "Main Structure"
+  - assembly: "Main Structure"
     parts:
       - component: "Top Plate"
       - component: "Bulkhead"
