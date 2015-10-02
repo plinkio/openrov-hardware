@@ -29,7 +29,7 @@ assemblies:
   - type: "Shell" # if only assembly is provided, then this is a "class"
     parts:
       - name: "Shell"
-        solid: "Shell" # also redundant, all parts contain reference to a solid
+        part: "Shell" # also redundant, all parts contain reference to a solid
       - name: "Fin" # the solid implied here is "Fin"
 
   - type: "Main Structure"
