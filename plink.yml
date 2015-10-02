@@ -1,6 +1,6 @@
 docs:
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
-    handler: "STEP" # the step handler creates a "solid" class of the same name. 
+    handler: "STEP" # the step handler creates a part class of the same name. 
        
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Fin.stp"
     handler: "STEP"    
@@ -42,8 +42,8 @@ assemblies:
 # another repo so going to figure that out later.
 sourced:
   # if no name is provided, then the canonical name for the source will be used. for "raw material" it is:
-  # "type, material, thickness"
-  - class: "raw material"
+  # "class, type, material, thickness"
+  - class: "stock"
     type: "sheet"
     material: "acrylic"
     thickness: "3mm"
@@ -54,10 +54,10 @@ sourced:
 # examples would a piece of raw sheet plastic (from a source) and laser cut using a DXF file to produce a solid. (e.g. most of the pieces in the OpenROV cad)
 fabrications:
   - inputs:
-      - type: "raw material"
-        name: "sheet, acrylic, 3mm" # canonical name
-      - type: "vectors"
+      - class: "stock" # redundant if using canonical name
+        name: "stock, sheet, acrylic, 3mm" # canonical name
+      - class: "vectors"
         name: "Shell" # this will come from the Shell.dxf in this example
   - outputs:
-      - type: "solid"
-        name: "Shell" # this output solid that gets made. 
+      - class: "part"
+        type: "Shell"
