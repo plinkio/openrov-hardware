@@ -11,32 +11,31 @@ docs:
   - filename: "CAD_Files_OpenROV_v2_8/DXF/Shell/Shell_3%20millimeter_Polypro.dxf"
     handler: "DXF"
 
+# the assembly tree
+# instatiates assemblies and parts
+tree:
+  - name: "Mechanical Assembly" # if type isn't provided then it is the same as "name"
+  
+# defines types of assemblies
 assemblies:
-  - name: "Mechanical Assembly" # if only name is provided, then a class of "name" will be created as name
+  - type: "Mechanical Assembly"
     subassemblies:
       # same naming rules in parts -- you could instatiate two "Shell" subassemblies and give them names.
       - name: "Shell"
         assembly: "Shell" # this is redundant when name == assembly
       - name: "Main Structure"
-      
+     parts: []  
 
-  - assembly: "Shell" # if only assembly is provided, then this is a "class"
+  - type: "Shell" # if only assembly is provided, then this is a "class"
     parts:
-      # these are referencing components
-      # (but what if the component and the parts have different names?
-      # then you would do
-      # - component: "Shell"
-      #   name: "S1"
-      # if you wanted to make a Shell part named S1.
-      # otherwise the name is the same as the component name
       - name: "Shell"
-        solid: "Shell" # also redundant
+        solid: "Shell" # also redundant, all parts contain reference to a solid
       - name: "Fin" # the solid implied here is "Fin"
 
-  - assembly: "Main Structure"
+  - type: "Main Structure"
     parts:
-      - component: "Top Plate"
-      - component: "Bulkhead"
+      - name: "Top Plate"
+      - name: "Bulkhead"
 
 # this is where object can be purchased from these could be loaded in
 # from the system bom as well... but that file is a mess and in
