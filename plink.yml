@@ -34,8 +34,13 @@ assemblies:
 
   - type: "Main Structure"
     parts:
-      - name: "Top Plate"
-      - name: "Bulkhead"
+      # you can also just omit the name: and list strings. Same as doing:
+      #
+      # - name: "foo"
+      #   part: "foo"
+      #
+      - "Top Plate"
+      - "Bulkhead"
 
 # this is where object can be purchased from these could be loaded in
 # from the system bom as well... but that file is a mess and in
