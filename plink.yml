@@ -24,7 +24,7 @@ assemblies:
       - name: "Shell"
         assembly: "Shell" # this is redundant when name == assembly
       - name: "Main Structure"
-     parts: []  
+    parts: []  
 
   - type: "Shell" # if only assembly is provided, then this is a "class"
     parts:
