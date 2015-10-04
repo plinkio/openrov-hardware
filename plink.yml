@@ -22,14 +22,15 @@ assemblies:
     subassemblies:
       # same naming rules in parts -- you could instatiate two "Shell" subassemblies and give them names.
       - name: "Shell"
-        assembly: "Shell" # this is redundant when name == assembly
+        # this is redundant when name == assembly
+        type: "Shell" 
       - name: "Main Structure"
     parts: []  
 
   - type: "Shell" # if only assembly is provided, then this is a "class"
     parts:
       - name: "Shell"
-        part: "Shell" # also redundant, all parts contain reference to a solid
+        type: "Shell" # also redundant, all parts contain reference to a solid
       - name: "Fin" # the solid implied here is "Fin"
 
   - type: "Main Structure"
@@ -45,7 +46,6 @@ assemblies:
       - name: "Top Plate"
       - name: "Bulkhead"
 
-      
 # this is where object can be purchased from these could be loaded in
 # from the system bom as well... but that file is a mess and in
 # another repo so going to figure that out later.
