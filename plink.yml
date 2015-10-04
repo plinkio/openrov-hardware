@@ -1,9 +1,13 @@
 docs:
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
-    handler: "STEP" # the step handler creates a part class of the same name. 
-       
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Fin.stp"
-    handler: "STEP"    
+    handler: 
+      name: "STEP"
+      config:  # this config is for the handler
+        type: "Fin" # STEP handler creates a part class for each step. Type defines the "type" of part created.
 
   - filename: "CAD_Files_OpenROV_v2_8/DXF/Shell/Fin_3 millimeter_Polypro.dxf"
     handler: "DXF" # dxf handler creates vectors
