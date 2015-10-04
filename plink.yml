@@ -14,11 +14,11 @@ docs:
 # the assembly tree
 # instatiates assemblies and parts
 tree:
-  - name: "Mechanical Assembly" # if type isn't provided then it is the same as "name"
+  - name: "OpenROV 2.8" # if type isn't provided then it is the same as "name"
   
 # defines types of assemblies
 assemblies:
-  - type: "Mechanical Assembly"
+  - type: "OpenROV 2.8"
     subassemblies:
       # same naming rules in parts -- you could instatiate two "Shell" subassemblies and give them names.
       - name: "Shell"
