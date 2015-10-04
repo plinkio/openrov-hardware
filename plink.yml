@@ -10,10 +10,12 @@ docs:
         type: "Fin" # STEP handler creates a part class for each step. Type defines the "type" of part created.
 
   - filename: "CAD_Files_OpenROV_v2_8/DXF/Shell/Fin_3 millimeter_Polypro.dxf"
-    handler: "DXF" # dxf handler creates vectors
+    handler:
+      name: "DXF" # dxf handler creates vectors
 
   - filename: "CAD_Files_OpenROV_v2_8/DXF/Shell/Shell_3%20millimeter_Polypro.dxf"
-    handler: "DXF"
+    handler:
+      name: "DXF"
 
 # the assembly tree
 # instatiates assemblies and parts
