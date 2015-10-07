@@ -1,4 +1,12 @@
 docs:
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Main Structure/Top Plate.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Main Structure/Bulkhead.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+      
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
     handler:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
