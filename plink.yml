@@ -59,7 +59,44 @@ assemblies:
       #- "Bulkhead"
       - name: "Top Plate"
       - name: "Bulkhead"
+      - name: "Handle"
+      - name: "Harness Pusher Final"
+      - name: "Vert Moto Mount"
 
+  - type: "Electronics Tube"
+    subassemblies:
+      - name: "Electronics Chassis"
+      - name: "Pass Through End Cap"
+      - name: "Non-Pass Through End Cap"
+
+  # XXX TODO, probably going to be bad to have a global assembly namespace. Later need to have another way to do this probably.
+  - type: "Electronics Chassis"
+    parts:
+      - name: "Main"
+      - name: "Left Servo Mount"
+        type: "Servo Mount"
+      - name: "Right Servo Mount"
+        type: "Servo Mount"
+      - name: "Left Side"
+        type: "Side"
+      - name: "Right Side"
+        type: "Side"
+      - name: "Wall"
+
+  - type: "Camera Mount"
+    subassemblies:
+      - name: "Left Arm"
+        type: "Camera Mount Arm"
+      - name: "Right Arm"
+        type: "Camera Mount Arm"
+    parts:
+      - name: "Face Plate"
+
+  - type: "Camera Mount Arm"
+    parts:
+      - name: "Arm 3mm"
+      - name: "Arm 6mm"
+        
 # this is where object can be purchased from these could be loaded in
 # from the system bom as well... but that file is a mess and in
 # another repo so going to figure that out later.
