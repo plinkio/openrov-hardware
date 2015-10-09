@@ -39,6 +39,7 @@ assemblies:
         # this is redundant when name == assembly
         type: "Shell" 
       - name: "Main Structure"
+      - name: "Electronics Tube"
     parts: []  
 
   - type: "Shell" # if only assembly is provided, then this is a "class"
@@ -68,6 +69,8 @@ assemblies:
       - name: "Electronics Chassis"
       - name: "Pass Through End Cap"
       - name: "Non-Pass Through End Cap"
+    parts:
+      - name: "Tube"
 
   # XXX TODO, probably going to be bad to have a global assembly namespace. Later need to have another way to do this probably.
   - type: "Electronics Chassis"
