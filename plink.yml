@@ -74,6 +74,8 @@ assemblies:
 
   # XXX TODO, probably going to be bad to have a global assembly namespace. Later need to have another way to do this probably.
   - type: "Electronics Chassis"
+    subassemblies:
+      - name: "Camera Mount"
     parts:
       - name: "Main"
       - name: "Left Servo Mount"
