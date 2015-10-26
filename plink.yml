@@ -20,25 +20,25 @@ docs:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
 
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Main.stp"
-    handle:
+    handler:
       name: "STEP"
       config:
         type: "Main"
 
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Servo Mount.stp"
-    handle:
+    handler:
       name: "STEP"
       config:
         type: "Servo Mount"
 
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Side.stp"
-    handle:
+    handler:
       name: "STEP"
       config:
         type: "Side"
 
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Wall.stp"
-    handle:
+    handler:
       name: "STEP"
       config:
         type: "Wall"
