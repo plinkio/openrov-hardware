@@ -15,6 +15,10 @@ docs:
     handler:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
 
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Main Structure/Harness Pusher Final.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Main.stp"
     handle:
       name: "STEP"
