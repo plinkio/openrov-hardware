@@ -15,7 +15,39 @@ docs:
     handler:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
 
-  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Electronics Chassis.stp"
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Main.stp"
+    handle:
+      name: "STEP"
+      config:
+        type: "Main"
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Servo Mount.stp"
+    handle:
+      name: "STEP"
+      config:
+        type: "Servo Mount"
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Side.stp"
+    handle:
+      name: "STEP"
+      config:
+        type: "Side"
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Aft/Electronics Chassis Wall.stp"
+    handle:
+      name: "STEP"
+      config:
+        type: "Wall"
+      
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Forward/Arm 6mm.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Forward/Arm 3mm.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Forward/Face Plate.stp"
     handler:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
       
