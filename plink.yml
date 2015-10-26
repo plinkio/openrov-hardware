@@ -6,11 +6,23 @@ docs:
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Main Structure/Bulkhead.stp"
     handler:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Main Structure/Handle.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Main Structure/Vert Moto Mount.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
+
+  - filename: "CAD_Files_OpenROV_v2_8/STEP/Electronics Tube/Electronics Chassis/Electronics Chassis.stp"
+    handler:
+      name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
       
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Shell.stp"
     handler:
       name: "STEP" # the step handler creates a part with type as the file name (if type is not specified)
-
+      
   - filename: "CAD_Files_OpenROV_v2_8/STEP/Shell/Fin.stp"
     handler: 
       name: "STEP"
@@ -66,11 +78,12 @@ assemblies:
 
   - type: "Electronics Tube"
     subassemblies:
+# ignore these for now
       - name: "Electronics Chassis"
-      - name: "Pass Through End Cap"
-      - name: "Non-Pass Through End Cap"
-    parts:
-      - name: "Tube"
+#      - name: "Pass Through End Cap"
+#      - name: "Non-Pass Through End Cap"
+#    parts:
+#      - name: "Tube"
 
   # XXX TODO, probably going to be bad to have a global assembly namespace. Later need to have another way to do this probably.
   - type: "Electronics Chassis"
